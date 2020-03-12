@@ -27,11 +27,13 @@ useEffect(() => {
     <CurrencyRow 
     currencyOptions={currencyOptions} //added currency otionos for drop down menu
     selectedCurrency={fromCurrency}
+    onChangeCurrency={e => setFromCurrency(e.target.value)}
     />
     <div className="equals">=</div>
     <CurrencyRow
     currencyOptions={currencyOptions} //added currency otionos for drop down menu
     selectedCurrency={toCurrency}
+    onChangeCurrency={e => setToCurrency(e.target.value)}
     />
     </>
   )
