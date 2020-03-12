@@ -2,14 +2,15 @@ import React from 'react'
 
 export default function CurrencyRow(props) {
     const {
-        currencyOptions //destructor
+        currencyOptions, //destructor
+        selectedCurrency
     } = props
     return (
         <div>
             <input type="number" className="input" /> 
-            <select>
+            <select value={selectedCurrency}>
                 {currencyOptions.map(option => (
-                <option key={option} value={option}>{option}</option>
+                <option value={option}>{option}</option>
                 ))}
             </select>
         </div>

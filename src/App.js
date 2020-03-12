@@ -14,7 +14,7 @@ useEffect(() => {
   fetch(BASE_URL) //logic for fetching data from the api
     .then(res => res.json())
     .then(data => {
-      const firstCurrency = Object.keys(data.rates)[0]
+      const firstCurrency = Object.keys(data.rates)[14] // 14 if number of HRK. Kuna on this list
       setCurrencyOptions([data.base, ...Object.keys(data.rates)])
       setFromCurrency(data.base)
       setToCurrency(firstCurrency)
@@ -26,12 +26,12 @@ useEffect(() => {
     <h1>Convert</h1>
     <CurrencyRow 
     currencyOptions={currencyOptions} //added currency otionos for drop down menu
-    selectCurrency={fromCurrency}
+    selectedCurrency={fromCurrency}
     />
     <div className="equals">=</div>
     <CurrencyRow
     currencyOptions={currencyOptions} //added currency otionos for drop down menu
-    selectCurrency={toCurrency}
+    selectedCurrency={toCurrency}
     />
     </>
   )
