@@ -19,9 +19,13 @@ useEffect(() => {
   return (
     <>
     <h1>Convert</h1>
-    <CurrencyRow />
+    <CurrencyRow 
+    currencyOptions={currencyOptions} //added currency otionos for drop down menu
+    />
     <div className="equals">=</div>
-    <CurrencyRow />
+    <CurrencyRow
+    currencyOptions={currencyOptions} //added currency otionos for drop down menu
+    />
     </>
   )
 }
