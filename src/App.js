@@ -34,6 +34,16 @@ useEffect(() => {
     })
 }, []) //empty array. call effect will call only first time when I run the app
 
+  function handleFromAmountChange(e) {
+  setAmount(e.target.value)
+  setAmountInFromCurrency(true)
+  }
+
+  function handleToAmountChange(e) {
+  setAmount(e.target.value)
+  setAmountInFromCurrency(false)
+  }
+
   return (
     <>
     <h1>Convert</h1>
@@ -41,6 +51,7 @@ useEffect(() => {
     currencyOptions={currencyOptions} //added currency otionos for drop down menu
     selectedCurrency={fromCurrency}
     onChangeCurrency={e => setFromCurrency(e.target.value)}
+    onChangeAmount={handleFromAmountChange}
     amount= {fromAmount}
     />
     <div className="equals">=</div>
@@ -48,6 +59,7 @@ useEffect(() => {
     currencyOptions={currencyOptions} //added currency otionos for drop down menu
     selectedCurrency={toCurrency}
     onChangeCurrency={e => setToCurrency(e.target.value)}
+    onChangeAmount={handleToAmountChange}
     amount= {toAmount}
     />
     </>
