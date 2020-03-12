@@ -34,6 +34,14 @@ useEffect(() => {
     })
 }, []) //empty array. call effect will call only first time when I run the app
 
+  useEffect(() => {
+    if (fromCurrency != null && toCurrency != null) {
+    fetch(`${BASE_URL}?base=${fromCurrency}&symbols=${toCurrency}`)
+      .then(res => res.json())
+      .then(data => setExchangeRate(data.rates[toCurrency]))
+    }
+  }, [fromCurrency, toCurrency]) //if this arry changes our exchange will still work
+
   function handleFromAmountChange(e) {
   setAmount(e.target.value)
   setAmountInFromCurrency(true)
