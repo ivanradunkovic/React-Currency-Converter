@@ -18,3 +18,7 @@ h1 {
   padding: .25rem;
   width: 8em;
 }
+
+select {
+  margin-left: .5rem;
+}
